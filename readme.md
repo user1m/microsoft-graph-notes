@@ -383,8 +383,17 @@ GET https://graph.microsoft.com/v1.0/me?$select=id,displayName,mail,mobilePhone&
 
 ### [HTTP Error Messages](https://developer.microsoft.com/en-us/graph/docs/concepts/errors)
 
+# Videos
+
+### [Delta Query and Webhooks](https://channel9.msdn.com/events/Build/2017/P4152?term=Microsoft%20Graph%20Extensibility)
+
+### Extensions:
+
+* [LINK1](https://channel9.msdn.com/events/Connect/2016/213?term=Microsoft%20Graph%20Extensibility)
+* [LINK2](https://channel9.msdn.com/events/Build/2017/P4153?term=Microsoft%20Graph%20Extensibility)
 
 
+### [New Updates](https://channel9.msdn.com/events/Connect/2016/104?term=Microsoft%20Graph%20Extensibility)
 
 
 
