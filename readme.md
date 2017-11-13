@@ -17,7 +17,7 @@
 | 100M monthly active users on Office 365 commercial, 400M Outlook.com active users, 8T resources (emails, events, users, files, groups, and more) |	Azure Active Directory, Outlook, OneDrive, OneNote, Office |
 
 
-
+![](./images/graph-uses.png)
 
 ## [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
 
