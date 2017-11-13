@@ -2,7 +2,7 @@
 
 ### You can use the Microsoft Graph API to interact with the data of millions of users in the Microsoft cloud. 
 
-![](https://cdn.graph.office.net/prod/GraphDocuments/en-us/concepts/images/microsoft_graph.png)
+![](./images/microsoft_graph.png)
 
 |Graph|Individual service endpoints|
 |:-----------------:|:-------------------:|
@@ -40,7 +40,7 @@
 ### 1. Register your app with the Azure AD v2.0 endpoint
 * [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com/)
 
-![](https://cdn.graph.office.net/prod/GraphDocuments/en-us/concepts/images/v2-web-registration.png)
+![](./images/registration.png)
 
 ### 2. Get authorization
 
@@ -182,7 +182,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 	&admin_consent=True
 	```
 	
-	![](https://cdn.graph.office.net/prod/GraphDocuments/en-us/concepts/images/admin-consent.png)
+	![](./images/admin-consent.png)
 
 4. Get an access token.
 
