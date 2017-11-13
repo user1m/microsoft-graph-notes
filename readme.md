@@ -1,5 +1,7 @@
 # microsoft-graph-overview
 
+# github.com/User1m/microsoft-graph-notes
+
 ### You can use the Microsoft Graph API to interact with the data of millions of users in the Microsoft cloud. 
 
 ![](./images/microsoft_graph.png)
@@ -163,7 +165,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 	**Request:**
 	
-	```js
+	```
 	// Line breaks are for legibility only.
 	
 	GET https://login.microsoftonline.com/{tenant}/adminconsent
@@ -174,7 +176,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 	
 	**Response:**
 	
-	```js
+	```
 	// Line breaks are for legibility only.
 
 	GET http://localhost/myapp/permissions
@@ -188,7 +190,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 	**Token Request:**
 	
-	```js
+	```
 	// Line breaks are for legibility only.
 	
 	POST /{tenant}/oauth2/v2.0/token HTTP/1.1
@@ -203,7 +205,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 	**Token Response:**
 	
-	```js
+	```
 	{
 	  "token_type": "Bearer",
 	  "expires_in": 3599,
@@ -227,12 +229,12 @@ JSON batching allows you to optimize your application by combining multiple requ
 * Can sequencing requests with the `dependsOn` property
 
 
-```js
+```
 POST https://graph.microsoft.com/beta/$batch
 Accept: application/json
 Content-Type: application/json
 ```
-```js
+```
 {
   "requests": [
     {
