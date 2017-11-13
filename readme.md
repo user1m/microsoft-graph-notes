@@ -2,6 +2,8 @@
 
 # github.com/User1m/microsoft-graph-notes
 
+![](./images/definition.png)
+
 ### You can use the Microsoft Graph API to interact with the data of millions of users in the Microsoft cloud. 
 
 ![](./images/microsoft_graph.png)
