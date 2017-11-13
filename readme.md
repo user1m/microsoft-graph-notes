@@ -119,6 +119,7 @@ Host: graph.microsoft.com
 
 * Access tokens are short lived, and you must refresh them after they expire to continue accessing resources. 
 * You can do so by submitting another `POST` request to the `/token` endpoint, this time providing the `refresh_token`
+* Will get back a new OAuth 2.0 refresh token
 
 **Request:**
 
@@ -152,7 +153,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 ### Get access without a user (Application)
 
-1. Register your app.
+1. Register your app. (same as above)
 
 2. Configure permissions for Microsoft Graph on your app.
 
@@ -226,7 +227,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ## [batching:](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching)
 JSON batching allows you to optimize your application by combining multiple requests into a single JSON object.
 
-* Can sequencing requests with the `dependsOn` property
+* Can sequence requests with the `dependsOn` property
 
 
 ```
@@ -259,7 +260,7 @@ Content-Type: application/json
 
 ## [throttling:](https://developer.microsoft.com/en-us/graph/docs/concepts/throttling)
 
-* When a throttling threshold is exceeded, Microsoft Graph limits any further requests from that client for a period of time. 
+* Microsoft Graph limits any further requests from that client for a period of time, when a throttling threshold is exceeded. 
 * When throttling occurs, Microsoft Graph returns HTTP status code `429 (Too many requests)`, and the requests fail. 
 * A suggested wait time is returned in the response header of the failed request
 
@@ -275,10 +276,19 @@ Content-Type: application/json
 
 Deliver notifications to clients
 
+Can subscribe to changes on the following:
+
+* Messages
+* Events
+* Contacts
+* Group conversations
+* Content shared on OneDrive including drives associated with SharePoint sites
+* User's personal OneDrive folders
+
 ##### Creating a subscription
 
 * Microsoft Graph validates the notification URL in a subscription request before creating the subscription
-
+* Returns a `201 Created` code and a subscription object in the body.
 
 **Request:**
 
@@ -294,6 +304,19 @@ Content-Type: application/json
 }
 ```
 
+![](./images/webhook-expirations.png)
+
+##### Renewing a subscription
+
+* Renew a subscription with a specific expiration date of up to `3 days` from the time of request
+
+```
+PATCH https://graph.microsoft.com/v1.0/subscriptions/{id};
+Content-Type: application/json
+{
+  "expirationDateTime": "2016-03-22T11:00:00.0000000Z"
+}
+```
 
 
 ## [delta queries:](https://developer.microsoft.com/en-us/graph/docs/concepts/delta_query_overview)
@@ -302,19 +325,25 @@ Track changes
 
 ![](./images/delta-support.png)
 
-```
-GET /me/calendarView/delta?startDateTime={start_datetime}&endDateTime={end_datetime}
-```
 
-A GET request with the delta function returns either:
+1. Call a GET request with the delta function on the desired resource.
+2. Get graph response containing the requested resource and a state token.
 
-* A `nextLink` (that contains a URL with a delta function call and a skipToken), or
-* A `deltaLin`k (that contains a URL with a delta function call and deltaToken).
+	```
+	GET /me/calendarView/delta?startDateTime={start_datetime}&endDateTime={end_datetime}
+	```
+	
+	A `GET` request with the delta function returns either:
+	
+	* A `nextLink` (that contains a URL with a delta function call and a skipToken), or
+	* A `deltaLin`k (that contains a URL with a delta function call and deltaToken).
 
+3. When the application needs to learn about changes to the resource, it makes a new request using the `deltaLink URL` received
+4. Graph returns a response describing changes to the resource since the previous request, and either a `nextLink URL` or a `deltaLink URL`.
 
 ## [extensions:](https://developer.microsoft.com/en-us/graph/docs/concepts/extensibility_overview)
 
-A way for you to extend Microsoft Graph with your own application data.
+A way for you to ***extend*** Microsoft Graph with your own application data.
 
 Two types of extensions:
 
