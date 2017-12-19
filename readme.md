@@ -33,11 +33,11 @@
 
 **Microsoft Graph exposes two kinds of permissions:**
 
-1. `application` : requires administrator consent
-2. `delegated` : For apps that run with a signed-in user, you request `delegated permissions` in the `scope` parameter. 
+1. **`application`** : requires *administrator consent*
+2. **`delegated`** : requires a *signed-in user*, you request `delegated permissions` in the `scope` parameter. 
 
 
-### Get access on behalf of a user (Delegated)
+## Get access on behalf of a user (Delegated)
 
 ### App must acquire an access token from Azure Active Directory (Azure AD), Microsoft's cloud identity service. 
 
@@ -153,7 +153,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ```
 
 
-### Get access without a user (Application)
+## Get access without a user (Application)
 
 1. Register your app. (same as above)
 
