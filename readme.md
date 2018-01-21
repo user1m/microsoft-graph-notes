@@ -397,10 +397,12 @@ GET https://graph.microsoft.com/v1.0/me?$select=id,displayName,mail,mobilePhone&
 * [LINK2](https://channel9.msdn.com/events/Build/2017/P4153?term=Microsoft%20Graph%20Extensibility)
 
 
-### [New Updates](https://channel9.msdn.com/events/Connect/2016/104?term=Microsoft%20Graph%20Extensibility)
+### What's new with MS Graph:
+* [MS Graph Updates](https://channel9.msdn.com/events/Connect/2016/104?term=what%27s%20new%20with%20Microsoft%20graph)
 
+* [Insight APIs](https://channel9.msdn.com/events/Build/2017/P4180?term=what%27s%20new%20with%20Microsoft%20graph)
 
-
+* [MS Graph Extensibility](https://channel9.msdn.com/events/Connect/2016/104?term=Microsoft%20Graph%20Extensibility)
 
 
 
